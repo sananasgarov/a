@@ -6,14 +6,10 @@ import matplotlib.pyplot as plt
 # (Already imported above)
 
 # 2. Load & explore data
-# The file is named a.json but contains CSV formatted data based on inspection
 try:
-    df = pd.read_csv('a.json')
-except:
-    # Fallback if read_csv fails on .json extension without specific handling, though typically it reads content
-    # We might need to handle it if it really is JSON structure, but the preview showed CSV.
-    # Assuming CSV format based on the "id,gender,age..." header.
-    pass
+    df = pd.read_csv('stroke_data.csv')
+except Exception as e:
+    print(f"Could not read file: {e}")
 
 print("Data Head:")
 print(df.head())
